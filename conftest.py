@@ -6,7 +6,7 @@ from utils import attach
 from dotenv import load_dotenv
 import os
 
-DEFAULT_BROWSER_VERSION = "100"
+DEFAULT_BROWSER_VERSION = "100.0"
 
 
 def pytest_add_option(parser):
