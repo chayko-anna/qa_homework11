@@ -13,14 +13,11 @@ def pytest_addoption(parser):
     parser.addoption('--browser_version')
 
 
-@pytest.fixture(scope="session", autouse=True)
-def load_env():
-    load_dotenv()
-
-
 @pytest.fixture(scope='session', autouse=True)
 def browser_settings(request):
     browser_version = request.config.getoption('browser_version') or DEFAULT_BROWSER_VERSION
+
+    load_dotenv()
 
     options = Options()
     capabilities = {
