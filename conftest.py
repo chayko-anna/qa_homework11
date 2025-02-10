@@ -9,11 +9,8 @@ import os
 DEFAULT_BROWSER_VERSION = "100.0"
 
 
-def pytest_add_option(parser):
-    parser.addoption(
-        '--browser_version',
-        default=DEFAULT_BROWSER_VERSION,
-    )
+def pytest_addoption(parser):
+    parser.addoption('--browser_version')
 
 
 @pytest.fixture(scope="session", autouse=True)
